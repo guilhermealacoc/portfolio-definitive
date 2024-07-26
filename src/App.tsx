@@ -1,9 +1,10 @@
-import { Typography } from "@mui/material";
+import { Button, Container, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
 import { styled, ThemeProvider } from "@mui/material/styles";
 
+import CardItem from "./components/card";
 import { interTight } from './styles/themes';
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -22,13 +23,14 @@ export default function FullWidthGrid() {
 
 
   const renderIntroSummary = (
-    <Box sx={{ flexGrow: 1 }}>
-    <Grid container spacing={2}>
+    <>
       <Grid item xs={6} md={6}>
         <Box sx={{
           pt: 10,
         }}>
         <Item>xs=6 md=8</Item>
+        <Button>Github</Button>
+        <Button>Linkedin</Button>
         <Typography variant="h4" align="left">
           {emoji}
         </Typography>
@@ -57,19 +59,32 @@ export default function FullWidthGrid() {
         ></Box>
         </Box>
       </Grid>
-      <Grid item xs={6} md={4}>
-        <Item>xs=6 md=4</Item>
-      </Grid>
-      <Grid item xs={6} md={8}>
-        <Item>xs=6 md=8</Item>
-      </Grid>
-    </Grid>
-  </Box>
+    </>
   )
+
+  const renderCardNew = (
+    <Container>
+    <Box>
+      <Typography variant="subtitle1">teste</Typography>
+    </Box>
+    <Box sx={{ flexGrow: 1, paddingTop: 15,  display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <CardItem />
+          <CardItem /> 
+          <CardItem />
+    </Box>
+    </Container>
+  )
+
 
   return (
     <ThemeProvider theme={interTight}>
+      <Box sx={{ flexGrow: 1 }}>
+      <Grid container spacing={2}>
       {renderIntroSummary}
+
+      {renderCardNew}
+      </Grid>
+      </Box>
     </ThemeProvider>
   );
 }
