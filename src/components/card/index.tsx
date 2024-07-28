@@ -2,7 +2,7 @@ import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@
 
 export default function CardItem() {
     return (
-        <Card sx={{ maxWidth: 345, ml: 5, mr: 5}}>
+        <Card variant="outlined" sx={{ width: 260}}>
           <CardMedia
             component="img"
             alt="green iguana"
