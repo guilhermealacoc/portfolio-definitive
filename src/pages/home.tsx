@@ -18,8 +18,8 @@ export default function Home() {
       <Grid item xs={12} md={6}>
         <Box sx={{ pt: 10 }}>
             <Box sx={{ display: 'flex', justifyContent: 'flex-start', pb: 3 }}>
-                <Button color="inherit" size="medium"  startIcon={<Icon icon="bi:linkedin" />}/>
-                <Button color="inherit" size="medium"  startIcon={<Icon icon="mdi:github" width="25" height="25" />}/>
+                <Button href="https://www.linkedin.com/in/guilherme-alacoc/" color="inherit" size="medium"  startIcon={<Icon icon="bi:linkedin" />}/>
+                <Button href="https://github.com/guilhermealacoc" color="inherit" size="medium"  startIcon={<Icon icon="mdi:github" width="25" height="25" />}/>
             </Box>
           <Typography variant="h4" align="left">
             {emoji}
@@ -59,6 +59,22 @@ export default function Home() {
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
           <CardItem imageLink="src\assets\waves\wave3.jpg" title="Lime Lemon"/>
+        </Grid>
+      </Grid>
+    </>
+  );
+
+  const renderFooter = (
+    <>
+      <Grid container spacing={3} sx={{ paddingTop: 10, paddingBottom: 5 }}>
+        <Grid item xs={12} sm={6} md={4}>
+        <Button href="https://www.linkedin.com/in/guilherme-alacoc/" color="inherit" size="medium"  startIcon={<Icon icon="bi:linkedin" />}/>
+       </Grid>
+        <Grid item xs={12} sm={6} md={4}>
+        <Button href="https://github.com/guilhermealacoc" color="inherit" size="medium"  startIcon={<Icon icon="mdi:github" width="25" height="25" />}/> 
+        </Grid>
+        <Grid item xs={12} sm={6} md={4}>
+        <Button href="https://dev.to/alacoc" color="inherit" size="medium"  startIcon={<Icon icon="skill-icons:devto-dark" width="25" height="25" />}/> 
         </Grid>
       </Grid>
     </>
@@ -121,6 +137,7 @@ export default function Home() {
           {renderAccordion}
         </Grid>
         {renderBodySummary}
+        {renderFooter}
       </Grid>
     </ThemeProvider>
   );
