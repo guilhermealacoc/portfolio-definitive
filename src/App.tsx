@@ -1,4 +1,4 @@
-import { Button, Container, Typography } from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary, Chip, Container, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
@@ -29,8 +29,10 @@ export default function FullWidthGrid() {
           pt: 10,
         }}>
         <Item>xs=6 md=8</Item>
-        <Button>Github</Button>
-        <Button>Linkedin</Button>
+        <Chip label="Avatar"
+  variant="outlined"/>
+        <Chip label="Avatar"
+  variant="outlined"/>
         <Typography variant="h4" align="left">
           {emoji}
         </Typography>
@@ -63,11 +65,11 @@ export default function FullWidthGrid() {
   )
 
   const renderCardNew = (
-    <Container>
-    <Box>
-      <Typography variant="subtitle1">teste</Typography>
-    </Box>
-    <Box sx={{ flexGrow: 1, paddingTop: 15,  display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+    <Container sx={{paddingTop: 12}}>
+    {/* <Box sx={{ flexGrow: 1, paddingTop: 15,  display: 'flex', justifyContent: 'left', alignItems: 'left' }}> */}
+      <Typography variant="h6" align="center">Projetos em destaque</Typography>
+    {/* </Box> */}
+    <Box sx={{ flexGrow: 1, paddingTop: 5,  display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
           <CardItem />
           <CardItem /> 
           <CardItem />
@@ -75,14 +77,71 @@ export default function FullWidthGrid() {
     </Container>
   )
 
+  const renderBodySummary = (
+    <Grid container justifyContent="center" sx={{pt: 10}}>
+      <Grid item xs={8} md={8}>
+      <Typography variant="subtitle1" align="justify">
+          {firstDescription}
+        </Typography>
+      </Grid>
+    </Grid>
+  );
+
+  const renderAccordion = (
+    <Container sx={{pt: 10}}>
+    <Accordion defaultExpanded>
+      <AccordionSummary
+        aria-controls="panel1-content"
+        id="panel1-header"
+      >
+        <Typography>Backend</Typography>
+      </AccordionSummary>
+      <AccordionDetails>
+        <Typography>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+          malesuada lacus ex, sit amet blandit leo lobortis eget.
+        </Typography>
+      </AccordionDetails>
+    </Accordion>
+    <Accordion>
+        <AccordionSummary
+          aria-controls="panel2-content"
+          id="panel2-header"
+        >
+          <Typography>Banco de Dados</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary
+          aria-controls="panel2-content"
+          id="panel2-header"
+        >
+          <Typography>Frontend</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+            malesuada lacus ex, sit amet blandit leo lobortis eget.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      </Container>
+  )
 
   return (
     <ThemeProvider theme={interTight}>
       <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
       {renderIntroSummary}
-
       {renderCardNew}
+      {renderBodySummary}
+      {renderAccordion}
       </Grid>
       </Box>
     </ThemeProvider>
