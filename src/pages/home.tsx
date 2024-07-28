@@ -1,19 +1,12 @@
-import { Accordion, AccordionDetails, AccordionSummary, Chip, Typography } from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary, Button, Typography } from "@mui/material";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
-import Paper from "@mui/material/Paper";
-import { styled, ThemeProvider } from "@mui/material/styles";
+import { ThemeProvider } from "@mui/material/styles";
 
 import CardItem from "../components/card";
 import { interTight } from '../styles/themes';
+import { Icon } from "@iconify/react/dist/iconify.js";
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: "center",
-  color: theme.palette.text.secondary,
-}));
 
 export default function Home() {
   const emoji = "👋  Oi, tudo bem?";
@@ -24,8 +17,10 @@ export default function Home() {
     <>
       <Grid item xs={12} md={6}>
         <Box sx={{ pt: 10 }}>
-          <Chip label="Avatar" variant="outlined" />
-          <Chip label="Avatar" variant="outlined" />
+            <Box sx={{ display: 'flex', justifyContent: 'flex-start', pb: 3 }}>
+                <Button color="inherit" size="medium"  startIcon={<Icon icon="bi:linkedin" />}/>
+                <Button color="inherit" size="medium"  startIcon={<Icon icon="mdi:github" width="25" height="25" />}/>
+            </Box>
           <Typography variant="h4" align="left">
             {emoji}
           </Typography>
@@ -38,13 +33,12 @@ export default function Home() {
         </Box>
       </Grid>
       <Grid item xs={12} md={6}>
-        <Box sx={{ pt: 10 }}>
-          <Item>xs=6 md=4</Item>
+        <Box sx={{ pt: 17 }}>
           <Box
             component="img"
             alt="auth"
             src={"src/assets/profileImage.jpg"}
-            sx={{ maxWidth: 250, borderRadius: "50%" }}
+            sx={{ maxWidth: 230, borderRadius: "50%" }}
           />
         </Box>
       </Grid>
@@ -58,13 +52,13 @@ export default function Home() {
       </Typography>
       <Grid container spacing={3} sx={{ paddingTop: 5 }}>
         <Grid item xs={12} sm={6} md={4}>
-          <CardItem />
+          <CardItem imageLink="src\assets\waves\wave1.jpg" title="Hat Trick Monitor"/>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <CardItem />
+          <CardItem imageLink="src\assets\waves\wave2.jpg" title="Personal Bookshelf"/>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <CardItem />
+          <CardItem imageLink="src\assets\waves\wave3.jpg" title="Lime Lemon"/>
         </Grid>
       </Grid>
     </>
@@ -126,6 +120,7 @@ export default function Home() {
         <Grid item xs={12}>
           {renderAccordion}
         </Grid>
+        {renderBodySummary}
       </Grid>
     </ThemeProvider>
   );

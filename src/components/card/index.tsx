@@ -1,27 +1,33 @@
+import { Icon } from "@iconify/react/dist/iconify.js";
 import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material";
 
-export default function CardItem() {
-    return (
-        <Card variant="outlined" sx={{ width: 260}}>
-          <CardMedia
-            component="img"
-            alt="green iguana"
-            height="140"
-            image="http://localhost:5173/src/assets/profileImage.jpg"
-          />
-          <CardContent>
-            <Typography gutterBottom variant="h5" component="div">
-              Lizard
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              Lizards are a widespread group of squamate reptiles, with over 6,000
-              species, ranging across all continents except Antarctica
-            </Typography>
-          </CardContent>
-          <CardActions>
-            <Button size="small">Share</Button>
-            <Button size="small">Learn More</Button>
-          </CardActions>
-        </Card>
-      );
+interface Props {
+  imageLink?: string;
+  title?: string;
+  description?: string;
+}
+
+export default function CardItem({ imageLink, title, description }: Props) {
+  return (
+    <Card variant="outlined" sx={{ width: 260 }}>
+      <CardMedia
+        component="img"
+        alt="wave"
+        height="140"
+        image={imageLink}
+      />
+      <CardContent>
+        <Typography gutterBottom variant="h5" component="div">
+          {title}
+        </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {description}
+        </Typography>
+      </CardContent>
+      <CardActions>
+        <Button color="inherit" size="small" variant="outlined" startIcon={<Icon icon="mdi:github" />}>Repo</Button>
+        <Button color="inherit" size="small">Saiba mais</Button>
+      </CardActions>
+    </Card>
+  );
 }
