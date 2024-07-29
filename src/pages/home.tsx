@@ -1,11 +1,13 @@
+import { Icon } from "@iconify/react/dist/iconify.js";
 import { Accordion, AccordionDetails, AccordionSummary, Button, Typography, useMediaQuery, useTheme } from "@mui/material";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import { ThemeProvider } from "@mui/material/styles";
+import { useState } from "react";
 
 import CardItem from "../components/card";
+import HomeDialog from "../components/dialog";
 import { interTight } from '../styles/themes';
-import { Icon } from "@iconify/react/dist/iconify.js";
 
 export default function Home() {
   const theme = useTheme();
@@ -28,11 +30,23 @@ export default function Home() {
     />
   );
 
+  const [dialogOpen, setDialogOpen] = useState(false);
+  const [dialogDescription, setDialogDescription] = useState('');
+
+  const handleOpenDialog = (description: string) => {
+    setDialogDescription(description);
+    setDialogOpen(true);
+  };
+
+  const handleCloseDialog = () => {
+    setDialogOpen(false);
+  };
+
   const renderIntroSummary = (
     <>
       <Grid item xs={12} md={6}>
         <Box sx={{ pt: { xs: 5, md: 10 } }}>
-          <Box sx={{ display: 'flex', justifyContent: 'flex-start', pb: 3 }}>
+          <Box sx={{ display: 'flex', justifyContent: 'flex-start', pb: 3, ...(isMobile && { justifyContent: 'center'}) }}>
             <Button href="https://www.linkedin.com/in/guilherme-alacoc/" color="inherit" size="medium" startIcon={<Icon icon="bi:linkedin" />} />
             <Button href="https://github.com/guilhermealacoc" color="inherit" size="medium" startIcon={<Icon icon="mdi:github" width="25" height="25" />} />
           </Box>
@@ -66,13 +80,18 @@ export default function Home() {
       </Typography>
       <Grid container spacing={3} sx={{ paddingTop: 5, ...(isMobile && { paddingLeft: 4 }) }}>
         <Grid item xs={12} sm={6} md={4}>
-          <CardItem imageLink="src/assets/waves/wave1.jpg" title="Hat Trick Monitor" />
+          <CardItem imageLink="src/assets/waves/wave1.jpg" title="Hat Trick Monitor" description="Your Description" onSaibaMaisClick={handleOpenDialog} />
+          <HomeDialog
+        description={dialogDescription}
+        openmodal={dialogOpen}
+        onClose={handleCloseDialog}
+      />
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <CardItem imageLink="src/assets/waves/wave2.jpg" title="Personal Bookshelf" />
+          <CardItem imageLink="src/assets/waves/wave2.jpg" title="Personal Bookshelf" description="Your Description" onSaibaMaisClick={handleOpenDialog}  />
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <CardItem imageLink="src/assets/waves/wave3.jpg" title="Lime Lemon" />
+          <CardItem imageLink="src/assets/waves/wave3.jpg" title="Lime Lemon" description="Your Description" onSaibaMaisClick={handleOpenDialog}  />
         </Grid>
       </Grid>
     </>
