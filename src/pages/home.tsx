@@ -1,18 +1,15 @@
+// other imports...
 import { Icon } from "@iconify/react/dist/iconify.js";
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Button,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary, Button, Typography, useMediaQuery, useTheme } from "@mui/material";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import { ThemeProvider } from "@mui/material/styles";
 import { useState } from "react";
 
+import profileImage from "../assets/profileImage.jpg";
+import wave1 from "../assets/waves/wave1.jpg";
+import wave2 from "../assets/waves/wave2.jpg";
+import wave3 from "../assets/waves/wave3.jpg";
 import CardItem from "../components/card";
 import HomeDialog from "../components/dialog";
 import { interTight } from "../styles/themes";
@@ -26,11 +23,11 @@ export default function Home() {
   const firstDescription =
     "Desenvolvedor de software apaixonado por tecnologia e por criar soluções para os mais diversos desafios. Focado em aplicações web, procuro sempre otimizar meu trabalho e aplicar práticas consolidadas no desenvolvimento de projetos. Além disso, estou constantemente aprimorando minhas soft skills para garantir um bom relacionamento com equipes, clientes e colegas de trabalho.";
 
-  const profileImage = (
+  const profileImageElement = (
     <Box
       component="img"
       alt="auth"
-      src="assets/profileImage.jpg"
+      src={profileImage}
       sx={{
         maxWidth: { xs: 150, md: 230 },
         borderRadius: "50%",
@@ -85,7 +82,7 @@ export default function Home() {
           <Typography variant="h4" align="left" sx={{ pb: 2 }}>
             {greetings}
           </Typography>
-          {isMobile && profileImage}
+          {isMobile && profileImageElement}
           <Typography variant="subtitle1" align="justify">
             {firstDescription}
           </Typography>
@@ -100,12 +97,13 @@ export default function Home() {
               justifyContent: { xs: "center", md: "flex-end" },
             }}
           >
-            {profileImage}
+            {profileImageElement}
           </Box>
         )}
       </Grid>
     </>
   );
+
   const hatTrickDescription = `Hat Trick Monitor é um projeto que visa monitorar a quantidade de hat tricks realizados por jogadores de futebol durante os jogos dos variados campeonatos do futebol brasileiro.
 A aplicação conta com interação com um bot no twitter para informar em tempo real sobre os acontecimentos, além de exibir estatísticas sobre os hat tricks realizados.
 O projeto está sendo desenvolvido utilizando Node.js, Express, MongoDB`;
@@ -133,7 +131,7 @@ O projeto está sendo desenvolvido utilizando Laravel e PostgreSQL.`;
       >
         <Grid item xs={12} sm={6} md={4}>
           <CardItem
-            imageLink="assets/waves/wave1.jpg"
+            imageLink={wave1}
             title="Hat Trick Monitor"
             description={hatTrickDescription}
             titleDialog="Hat Trick Monitor"
@@ -149,7 +147,7 @@ O projeto está sendo desenvolvido utilizando Laravel e PostgreSQL.`;
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
           <CardItem
-            imageLink="assets/waves/wave2.jpg"
+            imageLink={wave2}
             title="Personal Bookshelf"
             description={personalBookshelf}
             titleDialog="Personal Bookshelf"
@@ -159,7 +157,7 @@ O projeto está sendo desenvolvido utilizando Laravel e PostgreSQL.`;
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
           <CardItem
-            imageLink="assets/waves/wave3.jpg"
+            imageLink={wave3}
             title="Lime Lemon"
             linkRepo="https://github.com/guilhermealacoc/limelemon"
             description={limeLemonDescription}
