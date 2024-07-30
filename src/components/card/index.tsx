@@ -1,18 +1,12 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
-import {
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  CardMedia,
-  Typography,
-} from "@mui/material";
+import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material";
 
 interface Props {
   imageLink?: string;
   title?: string;
   description: string;
   titleDialog: string;
+  linkRepo: string;
   onSaibaMaisClick: (description: string, titleDialog: string) => void;
 }
 
@@ -22,6 +16,7 @@ export default function CardItem({
   titleDialog,
   description,
   onSaibaMaisClick,
+  linkRepo,
 }: Props) {
   return (
     <Card variant="outlined" sx={{ width: 260 }}>
@@ -37,6 +32,7 @@ export default function CardItem({
           color="inherit"
           size="small"
           variant="outlined"
+          href={linkRepo}
           startIcon={<Icon icon="mdi:github" />}
         >
           Repo

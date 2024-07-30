@@ -82,7 +82,7 @@ export default function Home() {
             {emoji}
           </Typography>
 
-          <Typography variant="h4" align="left">
+          <Typography variant="h4" align="left" sx={{ pb: 2 }}>
             {greetings}
           </Typography>
           {isMobile && profileImage}
@@ -95,7 +95,7 @@ export default function Home() {
         {!isMobile && (
           <Box
             sx={{
-              pt: { xs: 5, md: 17 },
+              pt: { xs: 5, md: 22 },
               display: "flex",
               justifyContent: { xs: "center", md: "flex-end" },
             }}
@@ -124,7 +124,7 @@ O projeto está sendo desenvolvido utilizando Laravel e PostgreSQL.`;
         align="center"
         sx={{ paddingTop: { xs: 6, md: 12 } }}
       >
-        Projetos em destaque
+        Projetos em desenvolvimento
       </Typography>
       <Grid
         container
@@ -137,6 +137,7 @@ O projeto está sendo desenvolvido utilizando Laravel e PostgreSQL.`;
             title="Hat Trick Monitor"
             description={hatTrickDescription}
             titleDialog="Hat Trick Monitor"
+            linkRepo="https://github.com/guilhermealacoc/hat-trick-monitor-scraper"
             onSaibaMaisClick={handleOpenDialog}
           />
           <HomeDialog
@@ -152,6 +153,7 @@ O projeto está sendo desenvolvido utilizando Laravel e PostgreSQL.`;
             title="Personal Bookshelf"
             description={personalBookshelf}
             titleDialog="Personal Bookshelf"
+            linkRepo="https://github.com/guilhermealacoc/personal-bookshelf-api"
             onSaibaMaisClick={handleOpenDialog}
           />
         </Grid>
@@ -159,12 +161,90 @@ O projeto está sendo desenvolvido utilizando Laravel e PostgreSQL.`;
           <CardItem
             imageLink="src/assets/waves/wave3.jpg"
             title="Lime Lemon"
+            linkRepo="https://github.com/guilhermealacoc/limelemon"
             description={limeLemonDescription}
             titleDialog="Lime Lemon"
             onSaibaMaisClick={handleOpenDialog}
           />
         </Grid>
       </Grid>
+    </>
+  );
+
+  const renderBodySummary = (
+    <Grid container justifyContent="center" sx={{ pt: { xs: 5, md: 10 } }}>
+      <Grid item xs={12} md={8}>
+        <Typography variant="subtitle1" align="justify">
+          No dia a dia, atuo como desenvolvedor focado em otimização de sistemas
+          e desenvolvimento de novas funcionalidades. Participo na extração e
+          validação de dados, além de criar e atualizar interfaces. Trabalho na
+          solução de bugs e colaboro ativamente na estimativa de projetos e
+          avaliação de complexidade das tarefas. Priorizo a comunicação clara e
+          a colaboração, garantindo um fluxo de trabalho eficiente e entregas de
+          alta qualidade.
+        </Typography>
+      </Grid>
+    </Grid>
+  );
+
+  const renderLastSummary = (
+    <Grid container justifyContent="center" sx={{ pt: { xs: 5, md: 10 } }}>
+      <Grid item xs={12} md={8}>
+        <Typography variant="subtitle1" align="justify">
+          No meu cotidiano como desenvolvedor, estou sempre otimizado sistemas e
+          criando novas funcionalidades. Adoro aprender novas tecnologias e
+          estou sempre em busca de tendências no desenvolvimento. Além disso,
+          sou apaixonado por idiomas e estou constantemente estudando para
+          aprimorar minhas habilidades linguísticas. Pratico esportes
+          regularmente para manter a mente e o corpo ativos. Gosto de novas
+          experiências e estou sempre aberto a desafios que me façam crescer
+          profissionalmente e pessoalmente.
+        </Typography>
+      </Grid>
+    </Grid>
+  );
+
+  const renderAccordion = (
+    <>
+      <Accordion defaultExpanded sx={{ pt: 1 }}>
+        <AccordionSummary aria-controls="panel1-content" id="panel1-header">
+          <Typography>Backend</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            Atuei como desenvolvedor, participando de vários projetos que
+            utilizavam tecnologias como PHP e Node através de frameworks como
+            Symfony e AdonisJs. Desenvolvi atualizações e otimizações para
+            sistemas legados, trabalhei no desenvolvimento de scripts de
+            extração de dados de documentos e web scraping.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary aria-controls="panel2-content" id="panel2-header">
+          <Typography>Banco de Dados</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            Com MySql como banco de dados trabalhei na criação de queries e
+            validação dos dados. Com PostgreSQL trabalhei principalmente com na
+            melhoria e otimização de Queries e Views
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
+      <Accordion>
+        <AccordionSummary aria-controls="panel3-content" id="panel3-header">
+          <Typography>Frontend</Typography>
+        </AccordionSummary>
+        <AccordionDetails>
+          <Typography>
+            Desenvolvi e atualizei interfaces em Angular. Atuei no levantamento
+            de requisitos e no desenvolvimento de sistemas internos utilizando
+            Vue.js e Laravel. Desenvolvi versao web de aplicativos utilizando
+            React com diversas bibliotecas de componentes.
+          </Typography>
+        </AccordionDetails>
+      </Accordion>
     </>
   );
 
@@ -203,55 +283,6 @@ O projeto está sendo desenvolvido utilizando Laravel e PostgreSQL.`;
       </Grid>
     </Grid>
   );
-
-  const renderBodySummary = (
-    <Grid container justifyContent="center" sx={{ pt: { xs: 5, md: 10 } }}>
-      <Grid item xs={12} md={8}>
-        <Typography variant="subtitle1" align="justify">
-          {firstDescription}
-        </Typography>
-      </Grid>
-    </Grid>
-  );
-
-  const renderAccordion = (
-    <>
-      <Accordion defaultExpanded sx={{ pt: 1 }}>
-        <AccordionSummary aria-controls="panel1-content" id="panel1-header">
-          <Typography>Backend</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion>
-        <AccordionSummary aria-controls="panel2-content" id="panel2-header">
-          <Typography>Banco de Dados</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion>
-        <AccordionSummary aria-controls="panel3-content" id="panel3-header">
-          <Typography>Frontend</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Typography>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-            malesuada lacus ex, sit amet blandit leo lobortis eget.
-          </Typography>
-        </AccordionDetails>
-      </Accordion>
-    </>
-  );
-
   return (
     <ThemeProvider theme={interTight}>
       <Grid container spacing={2} sx={{ flexGrow: 1, pt: 2, px: 2 }}>
@@ -263,7 +294,7 @@ O projeto está sendo desenvolvido utilizando Laravel e PostgreSQL.`;
         <Grid item xs={12}>
           {renderAccordion}
         </Grid>
-        {renderBodySummary}
+        {renderLastSummary}
         {renderFooter}
       </Grid>
     </ThemeProvider>
