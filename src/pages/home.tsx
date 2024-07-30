@@ -30,7 +30,7 @@ export default function Home() {
     <Box
       component="img"
       alt="auth"
-      src={"public/assets/profileImage.jpg"}
+      src="src/public/assets/profileImage.jpg"
       sx={{
         maxWidth: { xs: 150, md: 230 },
         borderRadius: "50%",
@@ -133,7 +133,7 @@ O projeto está sendo desenvolvido utilizando Laravel e PostgreSQL.`;
       >
         <Grid item xs={12} sm={6} md={4}>
           <CardItem
-            imageLink="public/assets/waves/wave1.jpg"
+            imageLink="src/public/assets/waves/wave1.jpg"
             title="Hat Trick Monitor"
             description={hatTrickDescription}
             titleDialog="Hat Trick Monitor"
@@ -149,7 +149,7 @@ O projeto está sendo desenvolvido utilizando Laravel e PostgreSQL.`;
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
           <CardItem
-            imageLink="public/assets/waves/wave2.jpg"
+            imageLink="src/public/assets/waves/wave2.jpg"
             title="Personal Bookshelf"
             description={personalBookshelf}
             titleDialog="Personal Bookshelf"
@@ -159,7 +159,7 @@ O projeto está sendo desenvolvido utilizando Laravel e PostgreSQL.`;
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
           <CardItem
-            imageLink="public/assets/waves/wave3.jpg"
+            imageLink="src/public/assets/waves/wave3.jpg"
             title="Lime Lemon"
             linkRepo="https://github.com/guilhermealacoc/limelemon"
             description={limeLemonDescription}
