@@ -1,15 +1,5 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
-import {
-  Accordion,
-  AccordionDetails,
-  AccordionSummary,
-  Button,
-  List,
-  ListItem,
-  Typography,
-  useMediaQuery,
-  useTheme,
-} from "@mui/material";
+import { Accordion, AccordionDetails, AccordionSummary, Button, List, ListItem, Typography, useMediaQuery, useTheme } from "@mui/material";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import { ThemeProvider } from "@mui/material/styles";
@@ -236,14 +226,14 @@ O projeto está sendo desenvolvido utilizando Laravel e PostgreSQL.`;
         </Typography>
         <Typography variant="subtitle1" align="justify">
           Pratico Jiu Jitsu, como forma de defesa pessoal e também para o
-          desenvolvimento de disciplina, autoconfiança e a capacidade de manter
-          a calma em situações de alta pressão.
+          desenvolvimento de disciplina, autoconfiança e a capacidade de me
+          aprimorar em situações de alta pressão.
         </Typography>
         <Typography variant="subtitle1" align="justify">
-          Procuro sempre unir o aprendizado nos diversos meios que estudo e
-          pratico com o desenvolvimento de habilidades que possam ser aplicadas
-          no dia a dia. Utilizando metodos e técnicas de aprendizado para
-          otimizar o tempo e a qualidade do aprendizado.
+          Procuro sempre unir o aprendizado dos diversos meios que estudo e
+          experimento com o desenvolvimento de habilidades que possam ser
+          aplicadas no dia a dia. Utilizando métodos e técnicas de aprendizado
+          para otimizar o tempo e a qualidade do aprendizado.
         </Typography>
       </Grid>
     </Grid>
