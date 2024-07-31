@@ -1,6 +1,15 @@
-// other imports...
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { Accordion, AccordionDetails, AccordionSummary, Button, Typography, useMediaQuery, useTheme } from "@mui/material";
+import {
+  Accordion,
+  AccordionDetails,
+  AccordionSummary,
+  Button,
+  List,
+  ListItem,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import { ThemeProvider } from "@mui/material/styles";
@@ -20,8 +29,32 @@ export default function Home() {
 
   const emoji = "👋  Oi, tudo bem?";
   const greetings = "sou Guilherme Alacoc";
-  const firstDescription =
-    "Desenvolvedor de software apaixonado por tecnologia e por criar soluções para os mais diversos desafios. Focado em aplicações web, procuro sempre otimizar meu trabalho e aplicar práticas consolidadas no desenvolvimento de projetos. Além disso, estou constantemente aprimorando minhas soft skills para garantir um bom relacionamento com equipes, clientes e colegas de trabalho.";
+  const firstDescription = (
+    <>
+      <Typography variant="subtitle1" align="justify" sx={{ pb: 1 }}>
+        Desenvolvedor de software com foco em aplicações web e paixão por
+        tecnologia.
+      </Typography>
+      <List sx={{ listStyleType: "disc", pl: 2, pb: 1 }}>
+        <ListItem sx={{ display: "list-item", textAlign: "justify" }}>
+          Tecnologias principais: Javascript e PHP
+        </ListItem>
+        <ListItem sx={{ display: "list-item", textAlign: "justify" }}>
+          Frameworks backend: Laravel, AdonisJs, Symfony, Express.js
+        </ListItem>
+        <ListItem sx={{ display: "list-item", textAlign: "justify" }}>
+          Frameworks frontend: React, Vue, Angular,
+        </ListItem>
+        <ListItem sx={{ display: "list-item", textAlign: "justify" }}>
+          Ferramentas de devops: Docker e Azure Devops
+        </ListItem>
+      </List>
+      <Typography variant="subtitle1" align="justify">
+        Sempre focado em alcançar alto desempenho no trabalho, aliado a um
+        excelente relacionamento com a equipe.
+      </Typography>
+    </>
+  );
 
   const profileImageElement = (
     <Box
@@ -29,7 +62,7 @@ export default function Home() {
       alt="auth"
       src={profileImage}
       sx={{
-        maxWidth: { xs: 150, md: 230 },
+        maxWidth: { xs: 155, md: 235 },
         borderRadius: "50%",
         ...(isMobile && { padding: 2 }),
       }}
@@ -75,24 +108,28 @@ export default function Home() {
               startIcon={<Icon icon="mdi:github" width="25" height="25" />}
             />
           </Box>
-          <Typography variant="h4" align="left">
+          <Typography
+            variant="h4"
+            align="left"
+            sx={{
+              pl: { xs: 3, md: 0 },
+            }}
+          >
             {emoji}
           </Typography>
 
-          <Typography variant="h4" align="left" sx={{ pb: 2 }}>
+          <Typography variant="h4" align="left" sx={{ pb: 3 }}>
             {greetings}
           </Typography>
           {isMobile && profileImageElement}
-          <Typography variant="subtitle1" align="justify">
-            {firstDescription}
-          </Typography>
+          {firstDescription}
         </Box>
       </Grid>
       <Grid item xs={12} md={6}>
         {!isMobile && (
           <Box
             sx={{
-              pt: { xs: 5, md: 22 },
+              pt: { xs: 5, md: 24 },
               display: "flex",
               justifyContent: { xs: "center", md: "flex-end" },
             }}
@@ -170,33 +207,43 @@ O projeto está sendo desenvolvido utilizando Laravel e PostgreSQL.`;
   );
 
   const renderBodySummary = (
-    <Grid container justifyContent="center" sx={{ pt: { xs: 5, md: 10 } }}>
+    <Grid container justifyContent="center" sx={{ pt: { xs: 5, md: 8 } }}>
       <Grid item xs={12} md={8}>
         <Typography variant="subtitle1" align="justify">
           No dia a dia, atuo como desenvolvedor focado em otimização de sistemas
-          e desenvolvimento de novas funcionalidades. Participo na extração e
-          validação de dados, além de criar e atualizar interfaces. Trabalho na
-          solução de bugs e colaboro ativamente na estimativa de projetos e
-          avaliação de complexidade das tarefas. Priorizo a comunicação clara e
-          a colaboração, garantindo um fluxo de trabalho eficiente e entregas de
-          alta qualidade.
+          e desenvolvimento de novas funcionalidades.
+        </Typography>
+        <Typography variant="subtitle1" align="justify">
+          Participo na extração e validação de dados, além de criar e atualizar
+          interfaces. Trabalho na solução de bugs e colaboro ativamente na
+          estimativa de projetos e avaliação de complexidade das tarefas.
+        </Typography>
+        <Typography variant="subtitle1" align="justify">
+          Priorizo a comunicação clara e a colaboração, garantindo um fluxo de
+          trabalho eficiente e entregas de alta qualidade.
         </Typography>
       </Grid>
     </Grid>
   );
 
   const renderLastSummary = (
-    <Grid container justifyContent="center" sx={{ pt: { xs: 5, md: 10 } }}>
+    <Grid container justifyContent="center" sx={{ pt: { xs: 5, md: 8 } }}>
       <Grid item xs={12} md={8}>
         <Typography variant="subtitle1" align="justify">
-          No meu cotidiano como desenvolvedor, estou sempre otimizado sistemas e
-          criando novas funcionalidades. Adoro aprender novas tecnologias e
-          estou sempre em busca de tendências no desenvolvimento. Além disso,
-          sou apaixonado por idiomas e estou constantemente estudando para
-          aprimorar minhas habilidades linguísticas. Pratico esportes
-          regularmente para manter a mente e o corpo ativos. Gosto de novas
-          experiências e estou sempre aberto a desafios que me façam crescer
-          profissionalmente e pessoalmente.
+          Tenho um grande interesse em estudar idiomas, com um foco especial em
+          inglês e mandarim, embora também me interesse profundamente por
+          alemão, francês e russo.
+        </Typography>
+        <Typography variant="subtitle1" align="justify">
+          Pratico Jiu Jitsu, como forma de defesa pessoal e também para o
+          desenvolvimento de disciplina, autoconfiança e a capacidade de manter
+          a calma em situações de alta pressão.
+        </Typography>
+        <Typography variant="subtitle1" align="justify">
+          Procuro sempre unir o aprendizado nos diversos meios que estudo e
+          pratico com o desenvolvimento de habilidades que possam ser aplicadas
+          no dia a dia. Utilizando metodos e técnicas de aprendizado para
+          otimizar o tempo e a qualidade do aprendizado.
         </Typography>
       </Grid>
     </Grid>
